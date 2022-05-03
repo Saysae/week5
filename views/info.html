@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Info</title>
+    <title>{{ @title }}</title>
 </head>
 <body>
-<h1>Information</h1>
+<h1>{{ @title }}</h1>
+<p>{{ @username }} is logged in</p>
+<p>encrypted password {{ @password }}</p>
+<p>I like {{ @color }}</p>
+<p>The circumference of a circle with radius {{ @radius }}</p>
+<p>circumference = {{ round(2 * pi() * @radius, 3)}}</p>
+
+<ul>
+<repeat group="{{ @fruits }}" value="{{ @fruit }}">
+    <li>{{ trim(@fruit) }}</li>
+</repeat>
+</ul>
+
+<ol>
+    <repeat group="{{ @desserts }}" key="{{ @type }}" value="{{ @desserts }}">
+        <li>{{ @type }} - {{ @desserts }}</li>
+    </repeat>
+</ol>
 </body>
 </html>
